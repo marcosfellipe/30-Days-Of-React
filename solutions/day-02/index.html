@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Level 02</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const root = document.querySelector("#root");
+
+      const users = [
+        {
+          name: "Marcos Fellipe",
+          country: "Brasil",
+          title: "Mr.",
+          gender: "Male",
+          email: "test@test.com",
+          phone: "(99) 9 9999-9999",
+        },
+        {
+          name: "Submarino",
+          country: "Azeroth",
+          title: "Mr.",
+          gender: "Male",
+          email: "test@test.com",
+          phone: "(99) 9 9999-9999",
+        },
+      ];
+
+      const main = (
+        <main style={{ backgroundColor: "aliceblue" }}>
+          {users.map((user) => {
+            return (
+              <div key={user.name}>
+                <h1>{user.name}</h1>
+                <p>{user.country}</p>
+                <p>{user.title}</p>
+                <p>{user.gender}</p>
+                <p>{user.email}</p>
+                <p style={{ color: "green" }}>{user.phone}</p>
+              </div>
+            );
+          })}
+        </main>
+      );
+
+      const footer = (
+        <footer style={{ backgroundColor: "aquamarine" }}>
+          <p>I'm a footer</p>
+        </footer>
+      );
+
+      const app = (
+        <div style={{ fontFamily: "Verdana" }}>
+          {main}
+          {footer}
+        </div>
+      );
+
+      ReactDOM.render(app, root);
+    </script>
+  </body>
+</html>
